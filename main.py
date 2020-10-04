@@ -43,7 +43,6 @@ def Create_db(DRIVER_PATH, search_term, number_images = 100, target_path = './im
 
 def train(path = None):
     
-    
     data = DataBlock(
         blocks=(ImageBlock, CategoryBlock), 
         get_items=get_image_files, 
@@ -181,7 +180,8 @@ def on_create_ds():
                     command=lambda: retrieve_input())
     buttonCommit.pack()
     root.mainloop()
-    
+ 
+# Add Changes here to allow hyperparameter tuning   
 def on_train():
     
     train(path = str(target_path_i))
